@@ -40,6 +40,8 @@ function SongDetails() {
         <h3>
           {song.is_favorite ? <span>⭐️</span> : null} {song.name}
         </h3>
+        <h3>Album: {song.album}</h3>
+        <h4>Release Date: {song.time}</h4>
         <div className="showNavigation">
           <div>
             {" "}

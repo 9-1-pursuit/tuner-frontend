@@ -59,26 +59,23 @@ function SongEditForm() {
           onChange={handleTextChange}
           required
         />
-        {/* <label htmlFor="url">URL:</label>
+        <label htmlFor="album">Album:</label>
         <input
-          id="url"
+          id="album"
           type="text"
-          pattern="http[s]*://.+"
           required
-          value={bookmark.url}
-          placeholder="http://"
+          value={song.album}
           onChange={handleTextChange}
         />
-        <label htmlFor="category">Category:</label>
+        <label htmlFor="time">Release Date:</label>
         <input
-          id="category"
-          type="text"
-          name="category"
-          value={bookmark.category}
-          placeholder="educational, inspirational, ..."
+          id="time"
+          type="date"
+          value={song.time}
+          pattern="mm/dd/yyyy"
           onChange={handleTextChange}
         />
-        <label htmlFor="is_favorite">Favorite:</label> */}
+        <label htmlFor="is_favorite">Favorite:</label>
         <input
           id="is_favorite"
           type="checkbox"
