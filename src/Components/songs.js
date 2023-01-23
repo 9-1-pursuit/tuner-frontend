@@ -27,8 +27,8 @@ const [songs, setSongs] = useState([]);
           <thead>
             <tr>
               <th></th>
-              <th>Take me there</th>
-              <th>See this bookmark</th>
+              <th>Song Name</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
