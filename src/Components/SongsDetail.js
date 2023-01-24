@@ -30,7 +30,7 @@ export default function SongsDetail() {
       .catch((c) => {
         console.warn("catch", c)
       })
-  }, [id])
+  }, [id, API])
 
   return (
     <article className="song_detail">

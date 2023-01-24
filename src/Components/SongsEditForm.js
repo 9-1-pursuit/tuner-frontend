@@ -82,7 +82,7 @@ export default function SongsEditForm() {
           id="is_favorite"
           value={song.is_favorite}
           type="checkbox"
-          onChange={handle}
+          onChange={handleCheckboxChange}
         />
         <label htmlFor="time">time</label>
         <input

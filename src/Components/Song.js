@@ -18,7 +18,7 @@ export default function Song({ song }) {
           </a>
         </td>
         <td>
-          <Link to={`/songs/${song.id}`}> </Link>
+          <Link to={`/songs/${song.id}`}>⭐️</Link>
         </td>
       </tr>
     </div>
