@@ -11,12 +11,13 @@ import Error from "./Pages/Error"
 
 // COMPONENTS
 import NavBar from "./Components/NavBar"
+import Footer from "./Components/Footer"
 
 function App() {
   return (
     <div className="App_home">
-      <h1>Tuner App</h1>
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/songs" element={<Index />} />
@@ -25,6 +26,7 @@ function App() {
           <Route path="/songs/:id/edit" element={<Edit />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   )

@@ -1,5 +1,5 @@
 import React from "react"
-import TunerEditForm from "../Components/TunerEditForm"
+import TunerEditForm from "../Components/SongsEditForm"
 
 export default function Edit() {
   return (

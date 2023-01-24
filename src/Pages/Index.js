@@ -1,5 +1,5 @@
 import React from "react"
-import Tuners from "../Components/Tuners"
+import Tuners from "../Components/Songs"
 
 export default function Index() {
   return (

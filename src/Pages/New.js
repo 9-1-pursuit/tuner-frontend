@@ -1,5 +1,5 @@
 import React from "react"
-import TunersNewForm from "../Components/TunersNewForms"
+import TunersNewForm from "../Components/SongsNewForms"
 
 export default function New() {
   return (

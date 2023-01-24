@@ -1,5 +1,5 @@
 import React from "react"
-import TunersDetail from "../Components/TunersDetail"
+import TunersDetail from "../Components/SongsDetail"
 
 export default function Show() {
   return (
