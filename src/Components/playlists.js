@@ -27,7 +27,7 @@ const [plays, setPlays] = useState([]);
           <thead>
             <tr>
               <th></th>
-              <th>Song Name</th>
+              <th>Playlist Name</th>
               <th>Details</th>
             </tr>
           </thead>

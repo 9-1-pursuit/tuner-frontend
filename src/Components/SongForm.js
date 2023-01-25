@@ -7,6 +7,7 @@ function SongForm(props) {
 
   const [song, setSong] = useState({
     name: "",
+    artist: "",
     album: "",
     time: "",
     is_favorite: false,
@@ -35,6 +36,7 @@ function SongForm(props) {
     }
     setSong({
       name: "",
+      artist: "",
       album: "",
       time: "",
       is_favorite: false,
@@ -52,6 +54,15 @@ function SongForm(props) {
           type="text"
           onChange={handleTextChange}
           placeholder="Song Name"
+          required
+        />
+         <label htmlFor="artist">Artist Name:</label>
+        <input
+          id="artist"
+          value={song.artist}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Artist Name"
           required
         />
         <label htmlFor="album">Album:</label>

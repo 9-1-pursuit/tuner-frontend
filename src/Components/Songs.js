@@ -10,6 +10,9 @@ function Songs() {
   const [songs, setSongs] = useState([]);
   const { id } = useParams();
 
+
+console.log(songs)
+
   useEffect(() => {
     axios.get(`${API}/playlist/${id}/songs`).then((response) => {
       console.log(response.data);

@@ -13,9 +13,17 @@ function Song({ song, handleDelete, handleSubmit }) {
       <div className="Song">
         {viewEditForm ? (<SongForm songDetails={song} toggleView={toggleView} handleSubmit={handleSubmit}/>) : (
           <>
-
+          <br></br>
           <h4>
-            {song.album} <span>{song.name}</span>
+            Artist Name:<span>{song.artist}</span>
+          </h4>
+          <br></br>
+          <h4>
+            Song Name:<span>{song.name}</span>
+          </h4>
+          <br></br>
+          <h4>
+            Album Name:<span>{song.album}</span>
           </h4>
           <h5>Release Year: {song.time}</h5>
           <button onClick={() => handleDelete(song.id)}>delete</button>
