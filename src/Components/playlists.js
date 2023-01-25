@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Song from "./song";
+import Playlist from "./playlist";
 
 const API = process.env.REACT_APP_API_URL;
 
-function Songs() {
-const [songs, setSongs] = useState([]);
+function Playlists() {
+const [plays, setPlays] = useState([]);
 
 
   useEffect(() => {
-    axios.get(`${API}/songs`)
+    axios.get(`${API}/playlist`)
     .then((res) => {
-      setSongs(res.data)
+      setPlays(res.data)
     })
     .catch((error) => {
       console.log("catch", error)
@@ -32,8 +32,8 @@ const [songs, setSongs] = useState([]);
             </tr>
           </thead>
           <tbody>
-            {songs.map((song) => {
-              return <Song key={song.id} song={song} />;
+            {plays.map((play) => {
+              return <Playlist key={play.id} play={play} />;
             })}
           </tbody>
         </table>
@@ -42,4 +42,4 @@ const [songs, setSongs] = useState([]);
   );
 }
 
-export default Songs;
+export default Playlists;

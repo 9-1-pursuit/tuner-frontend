@@ -2,11 +2,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./Components/home";
-import Songs from "./Components/songs";
+import Playlists from "./Components/playlists";
 import NavBar from "./Components/NavBar";
-import SongDetails from "./Components/songDetail";
-import SongNewForm from "./Components/songNewForm";
-import SongEditForm from "./Components/songEditForm";
+import PlaylistDetails from "./Components/playlistDetail";
+import PlaylistNewForm from "./Components/PlaylistNewForm"
+import PlaylistEditForm from "./Components/PlaylistEditForm";
 
 
 function App() {
@@ -17,10 +17,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/songs" element={<Songs/>} />
-            <Route path="/songs/new" element={<SongNewForm/>} />
-            <Route  path="/songs/:id" element={<SongDetails/>} />
-            <Route path="/songs/:id/edit" element={<SongEditForm/>} />
+            <Route path="/playlist" element={<Playlists/>} />
+            <Route path="/playlist/new" element={<PlaylistNewForm/>} />
+            <Route  path="/playlist/:id" element={<PlaylistDetails/>} />
+            <Route path="/playlist/:id/edit" element={<PlaylistEditForm/>} />
             
           </Routes>
         </main>

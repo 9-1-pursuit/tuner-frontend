@@ -4,10 +4,10 @@ export default function NavBar() {
   return (
     <nav>
       <h1>
-        <Link to="/songs">Songs</Link>
+        <Link to="/playlist">Songs</Link>
       </h1>
       <button>
-        <Link to="/songs/new">New Songs</Link>
+        <Link to="/playlist/new">New Songs</Link>
       </button>
     </nav>
   );

@@ -4,17 +4,17 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 
 
-function SongDetails() {
-  const [song, setSong] = useState({});
+function PlaylistDetails() {
+  const [play, setPlay] = useState({});
 
   let navigate = useNavigate();
 
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get(`${API}/songs/${id}`)
+    axios.get(`${API}/playlist/${id}`)
     .then((res) => {
-      setSong(res.data);
+      setPlay(res.data);
     });
   }, [id, navigate, API]);
 
@@ -22,9 +22,9 @@ function SongDetails() {
 
   const deleteBookmark = () => {
     axios
-      .delete(`${API}/songs/${id}`)
+      .delete(`${API}/playlist/${id}`)
       .then(() => {
-        navigate(`/songs`);
+        navigate(`/playlist`);
       })
       .catch((c) => console.error("catch", c));
   };
@@ -38,19 +38,18 @@ function SongDetails() {
     <>
       <article>
         <h3>
-          {song.is_favorite ? <span>⭐️</span> : null} {song.name}
+          {play.is_favorite ? <span>⭐️</span> : null} {play.name}
         </h3>
-        <h3>Album: {song.album}</h3>
-        <h4>Release Date: {song.time}</h4>
+        <h4>Description: {play.description}</h4>
         <div className="showNavigation">
           <div>
             {" "}
-            <Link to={`/songs`}>
+            <Link to={`/playlist`}>
               <button>Back</button>
             </Link>
           </div>
           <div>
-            <Link to={`/songs/${id}/edit`}>
+            <Link to={`/playlist/${id}/edit`}>
               <button>Edit</button>
             </Link>
           </div>
@@ -64,4 +63,4 @@ function SongDetails() {
   );
 }
 
-export default SongDetails;
+export default PlaylistDetails;

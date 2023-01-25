@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
 
-function Song({ song }) {
+function Playlist({ play }) {
   return (
     <tr>
       <td>
-        {song.is_favorite ? (
+        {play.is_favorite ? (
           <span>⭐️</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
       </td>
       <td>
-       {song.name}
+       {play.name}
       </td>
       <td>
-        <Link to={`/songs/${song.id}`}>🎵</Link>
+        <Link to={`/playlist/${play.id}`}>🎵</Link>
       </td>
     </tr>
   );
 }
 
-export default Song;
+export default Playlist;;
