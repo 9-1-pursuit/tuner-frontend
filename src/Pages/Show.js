@@ -1,11 +1,11 @@
 import React from "react"
-import TunersDetail from "../Components/SongsDetail"
+import ArtistDetail from "../Components/ArtistDetail"
 
 export default function Show() {
   return (
     <div className="pages_show">
       Show
-      <TunersDetail />
+      <ArtistDetail />
     </div>
   )
 }

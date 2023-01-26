@@ -1,11 +1,11 @@
 import React from "react"
-import TunersNewForm from "../Components/SongsNewForms"
+import ArtistNewForm from "../Components/ArtistNewForms"
 
 export default function New() {
   return (
     <div className="pages_new">
       New
-      <TunersNewForm />
+      <ArtistNewForm />
     </div>
   )
 }
