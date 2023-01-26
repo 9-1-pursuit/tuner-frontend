@@ -43,7 +43,9 @@ export default function ArtistEditForm() {
   return (
     <div className="container">
       <Form onsubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="form-label">
+          Name:
+        </label>
         <input
           id="name"
           value={artist.name}
@@ -53,7 +55,9 @@ export default function ArtistEditForm() {
           required
         />
 
-        <label htmlFor="album">Album</label>
+        <label htmlFor="album" className="form-label">
+          Album
+        </label>
         <input
           id="ablum"
           value={artist.album}

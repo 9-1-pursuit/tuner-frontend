@@ -43,10 +43,12 @@ export default function SongsForm(props) {
     })
   }
   return (
-    <div className="Edit">
+    <div className="container">
       {props.children}
       <Form onSubmit={handleSubmit}>
-        <label htmlFor="artist_name">Name:</label>
+        <label htmlFor="artist_name" className="form-label">
+          Name:
+        </label>
         <input
           id="artist_name"
           value={song.name}
@@ -55,7 +57,9 @@ export default function SongsForm(props) {
           placeholder="song name"
           required
         />
-        <label htmlFor="Album_title">Artist:</label>
+        <label htmlFor="Album_title" className="form-label">
+          Artist:
+        </label>
         <input
           id="title"
           type="text"
@@ -63,7 +67,9 @@ export default function SongsForm(props) {
           value={song.artist}
           onChange={handleTextChange}
         />
-        <label htmlFor="album">Album</label>
+        <label htmlFor="album" className="form-label">
+          Album
+        </label>
         <input
           id="ablum"
           value={song.album}
@@ -72,14 +78,18 @@ export default function SongsForm(props) {
           onChange={handleTextChange}
           placeholder="Name of Album"
         />
-        <label htmlFor="is_favorite">Is your Favorite:</label>
+        <label htmlFor="is_favorite" className="form-label">
+          Is your Favorite:
+        </label>
         <input
           id="is_favorite"
           value={song.is_favorite}
           type="checkbox"
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="time">time</label>
+        <label htmlFor="time" className="form-label">
+          time
+        </label>
         <input
           id="time"
           value={song.time}

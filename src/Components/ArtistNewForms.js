@@ -47,7 +47,9 @@ export default function ArtistNewForms() {
           placeholder="Name of artist"
           required
         />
-        <label htmlFor="album">Album</label>
+        <label htmlFor="album" className="form-label">
+          Album
+        </label>
         <input
           id="ablum"
           value={artist.album}

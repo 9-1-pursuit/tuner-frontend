@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { Button } from "react-bootstrap"
+import { Button, Table } from "react-bootstrap"
 import SongsForm from "./SongsForm"
 
 export default function Song({ song, handleDelete, handleSubmit }) {
@@ -12,7 +12,7 @@ export default function Song({ song, handleDelete, handleSubmit }) {
   }
 
   return (
-    <div className="Songss">
+    <div className="container">
       {viewEditForm ? (
         <SongsForm
           ArtistDetails={song}
@@ -20,15 +20,27 @@ export default function Song({ song, handleDelete, handleSubmit }) {
           handleSubmit={handleSubmit}
         />
       ) : (
-        <>
-          <h3>Song: {name}</h3>
-          <p>Artist: {artist}</p>
-          <p>Time: {time}</p>
-          <p>Album: {album}</p>
-          <p>Favorite: {is_favorite}</p>
-
+        <Table className=" table table-info table-hover">
+          <thead>
+            <tr>
+              <th>Song</th>
+              <th>Artist</th>
+              <th>Time</th>
+              <th>Album: </th>
+              <th>Favorite:</th>
+            </tr>
+          </thead>
+          <tbody className=" table-group-divider">
+            <tr>
+              <td>{name}</td>
+              <td>{artist}</td>
+              <td>{time}</td>
+              <td>{album}</td>
+              <td>{is_favorite}</td>
+            </tr>
+          </tbody>
           <Button onClick={() => handleDelete(song.id)}>delete</Button>
-        </>
+        </Table>
       )}
       <Button onClick={toggleView}>edit this song</Button>
     </div>
