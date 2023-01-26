@@ -12,9 +12,6 @@ import Error from "./Pages/Error"
 // COMPONENTS
 import NavBar from "./Components/NavBar"
 import Footer from "./Components/Footer"
-// import Artists from "./Components/Artists"
-// import ArtistForm from "./Components/ArtistForm"
-// import Artist from "./Components/Artist"
 
 function App() {
   return (
@@ -23,16 +20,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/songs" element={<Index />} />
-          <Route path="/songs/new" element={<New />} />
-          <Route path="/songs/:id" element={<Show />} />
-          <Route path="/songs/:id/edit" element={<Edit />} />
-
-          {/* <Route path="artists">
-            <Route path="/artists/:id" element={<Artist />} />
-            <Route path index element={<Artists />} />
-            <Route path="edit" element={<ArtistForm />} />
-          </Route> */}
+          <Route path="/artists" element={<Index />} />
+          <Route path="/artists/new" element={<New />} />
+          <Route path="/artists/:id" element={<Show />} />
+          <Route path="/artists/:id/edit" element={<Edit />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

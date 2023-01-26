@@ -38,7 +38,7 @@ export default function ArtistDetail() {
   const { name, album, released } = artists
   return (
     <Card>
-      <article className="artist_detail">
+      <article className="artists">
         <h5>
           {name}
           <span>
