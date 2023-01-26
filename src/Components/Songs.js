@@ -16,10 +16,10 @@ export default function Songs() {
   }, [])
 
   return (
-    <div className="Tuners">
+    <div className="container">
       {console.log("I render first")}
       <section>
-        <Table>
+        <Table className="table">
           <thead>
             <tr>
               <th>
