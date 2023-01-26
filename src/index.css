@@ -48,7 +48,7 @@ tbody td:not(td:first-of-type):hover {
 }
 
 tbody tr:nth-child(even) {
-  background: #f4eafd;
+  background: #fdf7ea;
 }
 
 .New {
