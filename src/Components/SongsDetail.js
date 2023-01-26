@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { Button } from "react-bootstrap"
+const API = process.env.REACT_APP_API_URL
 
 export default function SongsDetail() {
   const [song, setSong] = useState([])
   const { id } = useParams
   const navigate = useNavigate()
-  const API = process.env.REACT_APP_API_URL
 
   const handleDeleteSong = () => {
     axios
@@ -30,7 +30,7 @@ export default function SongsDetail() {
       .catch((c) => {
         console.warn("catch", c)
       })
-  }, [id, API])
+  }, [id])
 
   return (
     <article className="song_detail">
