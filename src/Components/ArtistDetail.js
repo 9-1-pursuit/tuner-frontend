@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { Button } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 
-import Artists from "./Artists"
+import Songs from "./Songs"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -35,14 +35,17 @@ export default function ArtistDetail() {
       })
   }, [id])
 
-  const { name, ablum } = artists
+  const { name, album, released } = artists
   return (
-    <>
+    <Card>
       <article className="artist_detail">
         <h5>
           {name}
           <span>
-            <p>{ablum}</p>
+            <p>
+              {album}
+              {released}
+            </p>
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </h5>
@@ -62,6 +65,7 @@ export default function ArtistDetail() {
           </>
         </div>
       </article>
-    </>
+      <Songs />
+    </Card>
   )
 }
