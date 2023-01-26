@@ -52,15 +52,9 @@ tbody tr:nth-child(even) {
   background: #fdf7ea;
 }
 
-.container {
-  border: 1px solid rgb(34, 0, 255);
-  margin: auto;
-  width: 90%;
-}
-
 .container form {
   margin: auto;
-  width: 95%;
+  width: 195%;
 }
 
 input[type],
