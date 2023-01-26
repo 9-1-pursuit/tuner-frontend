@@ -1,4 +1,4 @@
-import { Router, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 // PAGES
 
@@ -19,7 +19,7 @@ import Artist from "./Components/Artist"
 function App() {
   return (
     <div className="App_home">
-      <Router>
+      <>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,15 +27,16 @@ function App() {
           <Route path="/songs/new" element={<New />} />
           <Route path="/songs/:id" element={<Show />} />
           <Route path="/songs/:id/edit" element={<Edit />} />
+
           <Route path="artists">
-            <Route path="artists/:id" element={<Artist />} />
+            <Route path="/artists/:id" element={<Artist />} />
             <Route path index element={<Artists />} />
-            <Route path="edit" element={ArtistForm} />
+            <Route path="edit" element={<ArtistForm />} />
           </Route>
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
-      </Router>
+      </>
     </div>
   )
 }
