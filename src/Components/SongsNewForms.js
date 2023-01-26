@@ -41,7 +41,7 @@ export default function SongsNewForms() {
   }
 
   return (
-    <div className="new_form">
+    <div className="New">
       <Form onsubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
