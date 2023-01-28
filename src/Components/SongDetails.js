@@ -1,14 +1,26 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Reviews from './Reviews'
+import axios from "axios";
+
+
 const API = process.env.REACT_APP_API_URL;
 
-function SongDetail() {
-  let { id } = useParams();
+function SongDetails() {
   const [song, setSong] = useState([]);
+  const { id } = useParams();
   const navigate = useNavigate();
-
+  
+  useEffect(() => {
+    axios
+    .get(`${API}/songs/${id}`)
+    .then((res) =>{
+      console.log(id)
+      setSong(res.data)
+    })
+    .catch( (error) => {
+     console.error(error); 
+    })
+  },[id])
   
   const handleDelete = () => {
     axios
@@ -19,20 +31,9 @@ function SongDetail() {
       .catch((e) => console.error(e));
   };
 
-  useEffect(() => {
-    axios
-    .get(`${API}/songs/${id}`)
-    .then((response) => {
-      setSong(response.data);
-    })
-    .catch((c) => {
-      console.warn("catch", c);
-    });
-  }, [id]);
-
 
   return (
-    <>
+    // <>
     <article className="Song-Details">
       {song.is_favorite ? <span>⭐️</span> : null}
       <h2>{song.name} By {song.artist}</h2>
@@ -55,9 +56,9 @@ function SongDetail() {
         </div>
       </div>
     </article>
-    {/* <Reviews /> */}
-    </>
-  );
-}
+    // </>
+    );
+  }
+  
+  export default SongDetails;
 
-export default SongDetail;

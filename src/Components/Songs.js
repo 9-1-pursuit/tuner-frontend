@@ -19,13 +19,13 @@ useEffect(() => {
   return (
     <div className="Songs">
        <h2>My Song Playlist🎤</h2> 
+       <div>
        {songs.map((song) => {
         return (
-             <div>
         <Song key={song.id} song={song}/>
-            </div>
             )
         })}
+       </div>
     </div>
   );
 }

@@ -21,8 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/songs" element={<Index />} />
             <Route path="/songs/new" element={<New />} />
-            <Route path="/songs/:index" element={<Show />} />
-            <Route path="/songs/:index/edit" element={<Edit />} />
+            <Route path="/songs/:id" element={<Show />} />
+            <Route path="/songs/:id/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

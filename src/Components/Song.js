@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Song = ({song}) => {
     return (
-        <div className='Song'>
-            <td>
+        <>
+            <div>
              {song.isFavorite ? (
           <span>⭐️</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
-      </td>
-      <td>
+      </div>
+      <div>
         <Link to={`/songs/${song.id}`}>{song.name}</Link>
-      </td>
-        </div>
+      </div>
+        </>
     );
 };
 
