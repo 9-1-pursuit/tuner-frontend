@@ -3,21 +3,19 @@ import axios from "axios"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { Button, Card } from "react-bootstrap"
 
-import Songs from "./Songs"
-
 const API = process.env.REACT_APP_API_URL
 
-export default function ArtistDetail() {
-  const [artists, setArtist] = useState([])
+export default function SongsDetail() {
+  const [songs, setSongs] = useState([])
   const { id } = useParams
   const navigate = useNavigate()
 
-  const handleDeleteArtist = () => {
+  const handleDeleteSongs = () => {
     axios
-      .delete(`${API}/artists/%${id}`)
+      .delete(`${API}/songs/%${id}`)
       .then(
         () => {
-          navigate(`/artists`)
+          navigate(`/songs`)
         },
         (error) => console.error(error)
       )
@@ -26,16 +24,16 @@ export default function ArtistDetail() {
 
   useEffect(() => {
     axios
-      .get(`${API}/artists/${id}`)
+      .get(`${API}/songs/${id}`)
       .then((res) => {
-        setArtist(res.data)
+        setSongs(res.data)
       })
       .catch((c) => {
         console.warn("catch", c)
       })
   }, [id])
 
-  const { name, album, released } = artists
+  const { name, album, released } = songs
   return (
     <Card>
       <article className="artists">
@@ -51,21 +49,20 @@ export default function ArtistDetail() {
         </h5>
         <div className="showNav">
           <>
-            <Link to={`/artists`}>
+            <Link to={`/songs`}>
               <Button>Back</Button>
             </Link>
           </>
           <>
-            <Link to={`/artists/${id}/edit`}>
+            <Link to={`/songs/${id}/edit`}>
               <Button>Edit</Button>
             </Link>
           </>
           <>
-            <Button onClick={handleDeleteArtist}>Delete </Button>
+            <Button onClick={handleDeleteSongs}>Delete </Button>
           </>
         </div>
       </article>
-      <Songs />
     </Card>
   )
 }

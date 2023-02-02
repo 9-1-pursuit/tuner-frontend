@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Artist from "./Song"
-import ArtistForm from "./SongsForm"
+import Artist from "./Artist"
+import ArtistForm from "./ArtistForms"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -10,6 +10,8 @@ export default function Artists() {
   const [artists, setArtist] = useState([])
   const { id } = useParams()
 
+  //  function that is gonna call songs id of artist specific with axios post and 
+//   set that object in setState array
   const handleAddArtist = (newArtist) => {
     axios
       .post(`${API}/songs/${id}/artists`, newArtist)

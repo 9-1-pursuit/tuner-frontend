@@ -4,12 +4,13 @@ import { Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 const API = process.env.REACT_APP_API_URL
 
-export default function ArtistNewForms() {
+export default function ArtistForms() {
   const navigate = useNavigate()
 
   const [artist, setArtist] = useState({
     name: "",
     album: "",
+    released: "",
   })
 
   const addOneArtist = (newArtist) => {
@@ -47,7 +48,9 @@ export default function ArtistNewForms() {
           placeholder="Name of artist"
           required
         />
-        <label htmlFor="album">Album</label>
+        <label htmlFor="album" className="form-label">
+          Album
+        </label>
         <input
           id="ablum"
           value={artist.album}

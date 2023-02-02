@@ -1,11 +1,11 @@
 import React from "react"
-import Artists from "../Components/Artists"
+import Songs from "../Components/Songs"
 
 export default function Index() {
   return (
     <div className="pages_index">
       Index
-      <Artists />
+      <Songs />
     </div>
   )
 }

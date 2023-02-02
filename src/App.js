@@ -20,10 +20,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/artists" element={<Index />} />
-          <Route path="/artists/new" element={<New />} />
-          <Route path="/artists/:id" element={<Show />} />
-          <Route path="/artists/:id/edit" element={<Edit />} />
+          <Route path="/songs" element={<Index />} />
+          <Route path="/songs/new" element={<New />} />
+          <Route path="/songs/:id" element={<Show />} />
+          <Route path="/songs/:id/edit" element={<Edit />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

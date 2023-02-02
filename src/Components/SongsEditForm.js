@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react"
-import { Form, useParams } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { Button, Form } from "react-bootstrap"
+import axios from "axios"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
-export default function SongsForm(props) {
-  const { id } = useParams()
-  const { songDetails } = props
+const API = process.env.REACT_APP_API_URL
+
+export default function SongsEditForm() {
+  const { id } = useParams
+  const navigate = useNavigate
 
   const [song, setSongs] = useState({
     name: "",
@@ -11,41 +15,40 @@ export default function SongsForm(props) {
     album: "",
     time: "",
     is_favorite: false,
-    artist_id: id,
   })
 
-  const handleTextChange = (event) => {
-    setSongs({ ...song, [event.target.id]: event.target.value })
+  const updatedSong = (updateSongs) => {
+    axios
+      .put(`${API}/songs/${id}`, updateSongs)
+      .then(
+        () => {
+          navigate(`/songs/${id}`)
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn(`catch`, c))
   }
 
-  useEffect(() => {
-    if (songDetails) {
-      setSongs(songDetails)
-    }
-  }, [id, songDetails, props])
+  const handleTextChange = (e) => {
+    setSongs({ ...song, [e.target.id]: e.target.value })
+  }
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (e) => {
     setSongs({ ...song, is_favorite: !song.is_favorite })
   }
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    props.handleSubmit(song, id)
-    if (songDetails) {
-      props.toggleView()
-    }
-    setSongs({
-      name: "",
-      artist: "",
-      album: "",
-      time: "",
-      is_favorite: false,
-      artist_id: id,
-    })
+  useEffect(() => {
+    axios.get(`${API}/songs/${id}`).then((res) => setSongs(res.data))((error) =>
+      navigate(`/not-found`)
+    )
+  }, [id, navigate])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    updatedSong(song, id)
   }
   return (
     <div className="container">
-      {props.children}
-      <Form onSubmit={handleSubmit}>
+      <Form onsubmit={handleSubmit}>
         <label htmlFor="artist_name" className="form-label">
           Name:
         </label>
@@ -98,7 +101,11 @@ export default function SongsForm(props) {
           placeholder="time"
         />
         <br />
+
         <input type="submit" />
+        <Button>
+          <Link to={"/songs"}>Back</Link>
+        </Button>
       </Form>
     </div>
   )

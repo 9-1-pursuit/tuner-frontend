@@ -1,11 +1,11 @@
 import React from "react"
-import ArtistEditForm from "../Components/ArtistEditForm"
+import SongsEditForm from "../Components/SongsEditForm"
 
 export default function Edit() {
   return (
     <div className="edit_form">
       Edit
-      <ArtistEditForm />
+      <SongsEditForm />
     </div>
   )
 }
