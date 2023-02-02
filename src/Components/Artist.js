@@ -11,33 +11,15 @@ export default function Artist({ artist, handleDelete, handleSubmit }) {
   }
 
   return (
-    <div className="container">
-      {viewEditForm ? (
-        <ArtistForms
-          ArtistDetails={artist}
-          toggleView={toggleView}
-          handleSubmit={handleSubmit}
-        />
-      ) : (
-        <Table className=" table table-info table-hover">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Album</th>
-              <th>released</th>
-            </tr>
-          </thead>
-          <tbody className=" table-group-divider">
-            <tr>
-              <td>{name}</td>
-              <td>{album}</td>
-              <td>{released}</td>
-            </tr>
-          </tbody>
-          <Button onClick={() => handleDelete(artist.id)}>delete</Button>
-        </Table>
-      )}
-      <Button onClick={toggleView}>edit this song</Button>
+    <div className="artists">
+      <tr>
+        <td>{name}</td>
+        <td>{album}</td>
+        <td>{released}</td>
+        <td>
+          <Link to={`/artists/${id}`}>⭐️</Link>
+        </td>
+      </tr>
     </div>
   )
 }
