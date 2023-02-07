@@ -1,0 +1,40 @@
+.form {
+    width: 90%;
+    height: 80vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.743);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.form label {
+    margin-top: 25px;
+}
+
+.form label:nth-child(5) {
+    margin: 0;
+    height: 60px;
+    width: fit-content;
+}
+
+.form label span span svg {
+    position: relative;
+    left: -40%;
+    bottom: -2px;
+}
+
+.form input {
+    border-radius: 20px;
+    height: 25px;
+    width: 250px;
+    text-indent: 10px;
+}
+
+.form .submitButton {
+    margin: 10px;
+    height: fit-content;
+    padding: 10px;
+}

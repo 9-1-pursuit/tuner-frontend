@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "FaseBulan";
+    src: local("FaseBulan"), url("./Fonts/FaseBulan.otf") format("truetype");
+}
+@font-face {
+    font-family: "AttackGraffiti";
+    src: local("AttackGraffiti"), url("./Fonts/AttackGraffiti.otf") format("truetype");
+}
+@font-face {
+    font-family: "Bouncy";
+    src: local("Bouncy"), url("./Fonts/Bouncy.otf") format("truetype");
+}
+@font-face {
+    font-family: "BouncyThin";
+    src: local("BouncyThin"), url("./Fonts/BouncyThin.otf") format("truetype");
+}
+@font-face {
+    font-family: "Street";
+    src: local("Street"), url("./Fonts/Street.otf") format("truetype");
+}
+@font-face {
+    font-family: "DonGraffiti";
+    src: local("DonGraffiti"), url("./Fonts/DonGraffiti.otf") format("truetype");
+}
+@font-face {
+    font-family: "Souvenir-Bold";
+    src: local("Souvenir-Bold"), url("./Fonts/Souvenir-Bold.otf") format("truetype");
+}
+@font-face {
+    font-family: "Arual";
+    src: local("Arual"), url("./Fonts/Arual.ttf") format("truetype");
+}
+
+.App {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 35px;
+    overflow-y: scroll;
+    background-image: url("/public/music-graffiti.jpeg");
+    background-size: cover;
+}

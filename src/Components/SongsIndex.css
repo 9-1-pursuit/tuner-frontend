@@ -1,0 +1,108 @@
+
+.index {
+    width: 80%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr auto;
+    justify-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #008d97c0;
+    text-shadow: rgb(3, 3, 87) 3px 2px 2px;
+}
+
+.index .index-top-header{
+    grid-row: 1;
+    font-family: AttackGraffiti;
+    font-size: 40px;
+    letter-spacing: 8px;
+    display: grid;
+    grid-template-columns: 5% 25% 40% 25% 5%;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    margin: 20px;
+    background: linear-gradient(to right, #ff2d65, #fb5c3c)
+}
+
+.index-top-header img {
+    height: 50px; 
+    animation: beat 1s linear infinite;
+}
+.index-top-header img:first-child {
+    grid-column: 1;
+}
+.index-top-header img:nth-child(2){
+    grid-column: 5;
+}
+.show-all{
+    grid-column:2;
+}
+.show-all, .show-favorites {
+    justify-self: center;
+    border-radius: 20px;
+    font-family: AttackGraffiti ;
+    height: 40px;
+    font-size: 22px;
+    background: #B026FF;
+    border: 1px solid #39ff14;
+}
+
+.show-favorites {
+    grid-column: 4;
+}
+
+.index-top-header h1 {
+    font-size: 40px;
+    margin: 0;
+    grid-column: 3;
+}
+
+.song-headers {
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    font-family: AttackGraffiti;
+}
+.song-headers h3 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color:#d73bae ;
+}
+
+.index .song {
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    color: yellow;
+    font-size: 18px;
+    border-bottom: rgb(3, 3, 87) solid 1px;
+    font-family: BouncyThin;
+    letter-spacing: 2px;
+}
+
+.song p:nth-child(3) {
+    color: #B026FF;
+}
+
+ .song p, .song h3 {
+    height: 100%;
+    border-right: rgb(3, 3, 87) solid 2px;
+    
+ }
+
+.index a:first-child {
+    color: #FC4C02;
+    text-decoration: none;
+}
+.index a:first-child:hover {
+    color: #39ff14;
+}
+
+.index a:last-child:hover{
+    color: #ff2d65;
+}
